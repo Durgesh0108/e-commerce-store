@@ -19,7 +19,7 @@ interface CategoryPageProps {
 		sizeId: string;
 		colorId: string;
 	};
-	category: CategoryType;
+	// category: CategoryType;
 }
 
 const CategoryPage: React.FC<CategoryPageProps> = async ({
