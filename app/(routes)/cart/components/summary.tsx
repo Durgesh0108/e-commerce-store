@@ -38,6 +38,7 @@ const Summary = () => {
 		);
 
 		window.location = response.data.url;
+
 	};
 
 	return (
@@ -46,7 +47,7 @@ const Summary = () => {
 			<div className="mt-6 space-y-4">
 				<div className="flex items-center justify-between border-t border-gray-200 pt-4">
 					<div className="text-base font-medium text-gray-900">
-						Order total
+						Order total:
 					</div>
 					<Currency value={totalPrice} />
 				</div>
