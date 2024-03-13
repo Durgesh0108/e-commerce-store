@@ -38,7 +38,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 	const colors = await getColors();
 	const category = await getCategory(params.categoryId);
 
-	console.log("category page,", category)
+	// console.log("category page,", category)
 
 	return (
 		// @ts-ignore
