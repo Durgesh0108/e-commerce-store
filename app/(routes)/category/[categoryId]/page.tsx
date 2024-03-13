@@ -16,8 +16,8 @@ export const revalidate = 0;
 interface CategoryPageProps {
 	params: { categoryId: string };
 	searchParams: {
-		sizeId: string;
-		colorId: string;
+		size?: string;
+		color?: string;
 	};
 	// category: CategoryType;
 }
@@ -28,15 +28,20 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 }) => {
 	const products = await getProducts({
 		categoryId: params.categoryId,
-		sizeId: searchParams.sizeId,
-		colorId: searchParams.colorId,
+		size: searchParams.size,
+		color: searchParams.color,
 	});
+
+	// console.log("category Product:", products);
 
 	const sizes = await getSizes();
 	const colors = await getColors();
 	const category = await getCategory(params.categoryId);
 
+	console.log("category page,", category)
+
 	return (
+		// @ts-ignore
 		<div className="bg-white">
 			<Container>
 				<Billboard data={category.billboard} />
@@ -45,12 +50,12 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 						<MobileFilters colors={colors} sizes={sizes} />
 						<div className="hidden lg:block">
 							<Filter
-								valueKey="sizeId"
+								valueKey="size"
 								name="Size"
 								data={sizes}
 							/>
 							<Filter
-								valueKey="colorId"
+								valueKey="color"
 								name="Color"
 								data={colors}
 							/>

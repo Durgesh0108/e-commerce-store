@@ -44,12 +44,12 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({ sizes, colors }) => {
 
 						<div className="p-4">
 							<Filter
-								valueKey="sizeId"
+								valueKey="size"
 								name="Size"
 								data={sizes}
 							/>
 							<Filter
-								valueKey="colorId"
+								valueKey="color"
 								name="Color"
 								data={colors}
 							/>
