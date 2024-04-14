@@ -9,13 +9,13 @@ import { useRouter } from "next/navigation";
 
 const NavbarActions = () => {
 	const [isMounted, setIsMounted] = useState(false);
-	const router = useRouter()
+	const router = useRouter();
 
 	const cart = useCart();
 
 	const goToCart = () => {
-		router.push('/cart')
-	}
+		router.push("/cart");
+	};
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -26,7 +26,10 @@ const NavbarActions = () => {
 	}
 	return (
 		<div className="ml-auto flex items-center gap-x-4">
-			<Button className="flex items-center rounded-full bg-black px-4 py-2" onClick={goToCart}>
+			<Button
+				className="flex items-center rounded-full bg-black px-4 py-2"
+				onClick={goToCart}
+			>
 				<ShoppingBag size={20} color="white" />
 				<span className="ml-2 text-sm font-medium text-white">
 					{cart.items.length}

@@ -1,14 +1,25 @@
+"use client"
+
 import getBillboards from "@/actions/get-billboards";
 import getProducts from "@/actions/get-products";
+import getSearchProducts from "@/actions/get-search-products";
 import Billboard from "@/components/billboard";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
+import { useSearchParams } from "next/navigation";
 
 const HomePage = async () => {
+	const searchParams = useSearchParams();
+
 	const billboards = await getBillboards(
 		"538322ae-f255-477a-9551-12bd49570d8f"
 	);
-	const products = await getProducts({ isFeatured: true });
+	// const products = await getProducts({ isFeatured: true });
+
+	const products = await getSearchProducts({
+		// @ts-ignore
+		q: searchParams.q,
+	});
 
 	return (
 		<Container>

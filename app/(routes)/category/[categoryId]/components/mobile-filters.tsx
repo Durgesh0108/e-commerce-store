@@ -43,11 +43,7 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({ sizes, colors }) => {
 						</div>
 
 						<div className="p-4">
-							<Filter
-								valueKey="size"
-								name="Size"
-								data={sizes}
-							/>
+							<Filter valueKey="size" name="Size" data={sizes} />
 							<Filter
 								valueKey="color"
 								name="Color"
